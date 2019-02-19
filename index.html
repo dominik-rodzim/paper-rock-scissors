@@ -1,43 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" >
-
-<head>
-  <meta charset="UTF-8">
-  <title>Paper Rock Scissors</title>
-  
-  
-  
-      <link rel="stylesheet" href="css/style.css">
-
-  
-</head>
-
-<body>
-
-  <div class ="container">
-    
-  <button id="new-game">New game</button>
-  <div id="limit-output"></div>
-</div>
-
-<div class ="container">
-  
-  <button id="rock">Rock</button>
-  <button id="paper">Paper</button>
-  <button id="scissors">Scissors</button>
-  <div id="output"></div>
-  <div id="result-output"></div>
-  
-
-</div>
-  
-  
-
-    <script  src="js/index.js"></script>
-
-
-
-
-</body>
-
+  <head>
+    <meta charset="UTF-8">
+    <title>Paper Rock Scissors</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class ="container">
+      <button id="new-game">New game</button>
+      <div id="limit-output"></div>    
+    </div>
+    <div class ="container">   
+      <button data-move="rock" class="player-move">Rock</button>
+      <button data-move="paper" class="player-move">Paper</button>
+      <button data-move="scissors" class="player-move">Scissors</button>
+      <div id="output"></div>
+      <div id="result-output"></div>
+    </div>
+    <div class="overlay" id="modal-overlay">
+      <div class="modal" id="modal-one">
+        <a href="#" class="close">x</a>
+        <header>Result</header>
+        <div class="content">
+          <div id="result-output-modal"></div>
+          <table id="game-details">
+        </div>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
 </html>
