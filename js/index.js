@@ -68,38 +68,23 @@ var playerMove = function(choice) {
   
   drawNumber();
   
-  if(choice === 'paper') {
-    if(computerChoice === 'rock') {
-      result = 'YOU WON';
-      } else {
-        result = 'YOU LOSE';
-      }
-  }
-  if(choice === 'scissors') {
-    if(computerChoice === 'rock') {
-      result = 'YOU WON';
-      } else {
-        result = 'YOU LOSE';
-      }
-  }
-  if(choice === 'rock') {
-    if(computerChoice === 'scissors') {
-      result = 'YOU WON';
-      } else {
-        result = 'YOU LOSE';
-      }
-  }
   if(choice === computerChoice) {
     result = 'TIE';
+  } else if (
+    (choice === 'paper' && computerChoice === 'rock')
+    ||
+    (choice === 'rock' && computerChoice === 'scissors')
+    ||
+    (choice === 'scissors' && computerChoice === 'paper') 
+  ) {
+      result = 'YOU WON';
+      params.playerWins++
+  } else {
+      result = 'YOU LOSE';
+      params.computerWins++;
   }
-  
+
   winner(choice);
-  
-  if(result === 'YOU WON') {
-    params.playerWins++;
-  } else if(result === 'YOU LOSE') {
-    params.computerWins++;
-  }
   
   resultOutput.innerHTML = 'Result: ' + params.playerWins + ' - ' + params.computerWins;
   
